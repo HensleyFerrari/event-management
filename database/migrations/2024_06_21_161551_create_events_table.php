@@ -15,12 +15,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId(User::class);
+            $table->foreignIdFor(User::class);
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
 
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
 
             $table->timestamps();
         });
